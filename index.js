@@ -18,30 +18,38 @@ const newSchema = new mongoose.Schema ({
 
 const User = mongoose.model("User" , newSchema)
 
-const User1 = new User({
-    name : "bhavya",
-    email : "bhavesh729@gmail.com",
-    age: 19,
-})
-const User2 = new User({
-    name : "Lucky",
-    email : "luckypatil@gmail.com",
-    age: 19,
-})
+// const User1 = new User({
+//     name : "bhavya",
+//     email : "bhavesh729@gmail.com",
+//     age: 19,
+// })
+// const User2 = new User({
+//     name : "Lucky",
+//     email : "luckypatil@gmail.com",
+//     age: 19,
+// })
 
-User1.save().then((res) =>{
-    console.log(res)
+// User1.save().then((res) =>{
+//     console.log(res)
     
-})
-.catch((err) =>{
-    console.log(`Error`)
+// })
+// .catch((err) =>{
+//     console.log(`Error`)
     
-})
-User2.save().then((res) =>{
-    console.log(res)
+// })
+// User2.save().then((res) =>{
+//     console.log(res)
     
-})
-.catch((err) =>{
-    console.log(`Error`)
+// })
+// .catch((err) =>{
+//     console.log(`Error`)
+    
+// })
+
+User.insertMany([
+    {name : "tony" , email : "tony@gmail.com" , age:50},
+    {name : "thor" , email : "thor@gmail.com" , age:49},
+]).then((res) =>{
+    console.log(res);
     
 })
