@@ -11,7 +11,10 @@ async function main() {
 }
 
 const newSchema = new mongoose.Schema ({
-    name:statusbar,
+    name: String,
     email:String,
     age:Number,
 })
+
+// const User = mongoose.model("User" , newSchema)
+const Employee = mongoose.model("Employee" , newSchema)
