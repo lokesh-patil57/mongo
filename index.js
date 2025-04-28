@@ -16,5 +16,32 @@ const newSchema = new mongoose.Schema ({
     age:Number,
 })
 
-// const User = mongoose.model("User" , newSchema)
-const Employee = mongoose.model("Employee" , newSchema)
+const User = mongoose.model("User" , newSchema)
+
+const User1 = new User({
+    name : "bhavya",
+    email : "bhavesh729@gmail.com",
+    age: 19,
+})
+const User2 = new User({
+    name : "Lucky",
+    email : "luckypatil@gmail.com",
+    age: 19,
+})
+
+User1.save().then((res) =>{
+    console.log(res)
+    
+})
+.catch((err) =>{
+    console.log(`Error`)
+    
+})
+User2.save().then((res) =>{
+    console.log(res)
+    
+})
+.catch((err) =>{
+    console.log(`Error`)
+    
+})
