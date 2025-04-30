@@ -18,15 +18,25 @@ const newSchema = new mongoose.Schema ({
 
 const User = mongoose.model("User" , newSchema)
 
-//Find by ID
-User.findById("680fd345769a865f9c95953e").then((res)=>{
+
+//Update Data 
+User.updateOne({name:"thor"},{age:51}).then((res)=>{
   console.log(res);
-  
 })
 .catch((err)=>{
   console.log(err);
   
 })
+
+//Find by ID
+// User.findById("680fd345769a865f9c95953e").then((res)=>{
+//   console.log(res);
+  
+// })
+// .catch((err)=>{
+//   console.log(err);
+  
+// })
 
 
 
