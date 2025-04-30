@@ -18,8 +18,8 @@ const newSchema = new mongoose.Schema ({
 
 const User = mongoose.model("User" , newSchema)
 
-// find method
-User.find({age : {$gt:20}}).then((res)=>{
+//Find by ID
+User.findById("680fd345769a865f9c95953e").then((res)=>{
   console.log(res);
   
 })
@@ -27,6 +27,18 @@ User.find({age : {$gt:20}}).then((res)=>{
   console.log(err);
   
 })
+
+
+
+// find method
+// User.find({age : {$gt:20}}).then((res)=>{
+//   console.log(res);
+  
+// })
+// .catch((err)=>{
+//   console.log(err);
+  
+// })
 
 // insert one
 // const User1 = new User({
