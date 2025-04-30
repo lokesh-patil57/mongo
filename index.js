@@ -18,6 +18,17 @@ const newSchema = new mongoose.Schema ({
 
 const User = mongoose.model("User" , newSchema)
 
+// find method
+User.find({age : {$gt:20}}).then((res)=>{
+  console.log(res);
+  
+})
+.catch((err)=>{
+  console.log(err);
+  
+})
+
+// insert one
 // const User1 = new User({
 //     name : "bhavya",
 //     email : "bhavesh729@gmail.com",
@@ -46,10 +57,12 @@ const User = mongoose.model("User" , newSchema)
     
 // })
 
-User.insertMany([
-    {name : "tony" , email : "tony@gmail.com" , age:50},
-    {name : "thor" , email : "thor@gmail.com" , age:49},
-]).then((res) =>{
-    console.log(res);
+
+// Insert Many
+// User.insertMany([
+//     {name : "tony" , email : "tony@gmail.com" , age:50},
+//     {name : "thor" , email : "thor@gmail.com" , age:49},
+// ]).then((res) =>{
+//     console.log(res);
     
-})
+// })
