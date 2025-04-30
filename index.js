@@ -18,14 +18,19 @@ const newSchema = new mongoose.Schema ({
 
 const User = mongoose.model("User" , newSchema)
 
+//DElete Method
+User.deleteMany({name:"thor"}).then((res)=>{
+    console.log(res);
+  })
+
 //find One and Update
-User.findOneAndUpdate({name:"tony"},{age:47}, {new:true}).then((res)=>{
-  console.log(res);
-})
-.catch((err)=>{
-  console.log(err);
+// User.findOneAndUpdate({name:"tony"},{age:47}, {new:true}).then((res)=>{
+//   console.log(res);
+// })
+// .catch((err)=>{
+//   console.log(err);
   
-})
+// })
 
 
 
