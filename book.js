@@ -13,13 +13,19 @@ async function main() {
 const bookSchema = new mongoose.Schema({
     title:{
         type:String,
-        required : true
+        required : true,
+        maxLength:20
     },
     author:{
         type:String
     },
     price:{
-        type:Number
+        type:Number,
+        min:1,
+    },
+    discount:{
+        type:Number,
+        default:0
     },
 })
 
@@ -27,9 +33,9 @@ const bookSchema = new mongoose.Schema({
 const Book = mongoose.model("Book" , bookSchema)
 
 let  book1 = new Book({
-    title:"Math XII",
-    author: "R D Sharama",
-    price: 1200,
+    title:"Shamchi aii",
+    author: "Sane guruji",
+    price: 150,
 })
 
 book1.save().then((res)=>{
